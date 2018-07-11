@@ -18,6 +18,8 @@ public class BackendApplication {
 	public CommandLineRunner initData(){
 		Annuity testAnnuity = new Annuity(5000,5.00,24,new Date());
 		System.out.println("annuity is " + testAnnuity.getAnnuity());
+		testAnnuity.setRepayPlan();
+		System.out.println(testAnnuity.getRepayPlan());
 		return (args) -> {};
 
 	}
