@@ -69,43 +69,4 @@ public class Annuity {
         return repaymentplan;
     }
 
-    //    public void setRepayPlan(){
-//        double calcAnnuity = this.annuity;
-//        Date payDay = this.startDate;
-//        double outsPrinc = this.loanAmount;
-//        double interest;
-//        double principal;
-//        double remainPrinc;
-//        Calendar myCal = Calendar.getInstance();
-//        myCal.setTime(payDay);
-//
-////        for (int i=0; i < this.duration; i++) {
-////            myCal.add(Calendar.MONTH, + i);
-////            payDay = myCal.getTime();
-////            interest = Math.round((((this.nominalIR * 30 * outsPrinc) / 360) / 100) * 100.0) / 100.0;
-////            principal = calcAnnuity - interest > outsPrinc? outsPrinc: Math.round((calcAnnuity - interest) * 100.0) / 100.0;
-////            calcAnnuity = calcAnnuity - interest > outsPrinc? Math.round((principal + interest) * 100.0) / 100.0: calcAnnuity;
-////            remainPrinc = Math.round((outsPrinc - principal) * 100.0) / 100.0;
-////            this.repayPlan.add(generateInstallment(calcAnnuity,payDay,outsPrinc,interest,principal,remainPrinc));
-////            outsPrinc = remainPrinc;
-////        }
-
-
-//    }
-
-//    public LinkedHashMap<String,Object> generateInstallment(double inputAnnuity
-//            , Date inputdate, double inpInitPrinc, double inpInt, double inpPrinc, double inpOutsPrinc){
-//        LinkedHashMap<String,Object> installment = new LinkedHashMap<>();
-//        installment.put("borrowerPaymentAmount", inputAnnuity);
-//        installment.put("date", inputdate);
-//        installment.put("initialOutstandingPrincipal", inpInitPrinc);
-//        installment.put("interest", inpInt);
-//        installment.put("principal", inpPrinc);
-//        installment.put("remainingOutstandingPrincipal", inpOutsPrinc);
-//        return installment;
-//    }
-//
-//    public List<LinkedHashMap<String,Object>> getRepayPlan() {
-//        return repayPlan;
-//    }
 }
