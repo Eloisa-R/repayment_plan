@@ -1,6 +1,6 @@
 <template>
   <div id="app">
-    <img src="./assets/logo.png">
+    <div class="title">Repayment Plan</div>
     <router-view/>
   </div>
 </template>
@@ -18,6 +18,17 @@ export default {
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
   color: #2c3e50;
-  margin-top: 60px;
+  margin-left: 10%;
+  margin-right: 10%;
 }
+
+body{
+  background-color: rgba(119,119,119,0.5)
+}
+  .title{
+    font-size: 4em;
+    padding: 4%;
+    background-color:#4183c4;
+    color: #ffffff;
+  }
 </style>

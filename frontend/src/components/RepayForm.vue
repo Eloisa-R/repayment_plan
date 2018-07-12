@@ -1,7 +1,7 @@
 
 
 <template>
-   <div>
+   <div class="form">
     <form @submit="checkForm">
 
         <p v-if="errors.length">
@@ -125,5 +125,21 @@
     ul{
         list-style: none;
     }
-
+    .form{
+        background-color: rgba(60,156,235, 0.5);
+        padding: 2%;
+    }
+    input{
+        background-color: rgba(225,225,225, 0.4);
+        border: none;
+        padding: 0.5%;
+        border-radius: 4px;
+    }
+    input[type=submit] {
+        padding: 1%;
+        padding-left: 2%;
+        padding-right: 2%;
+        border-radius: 4px;
+        border: none;
+    }
 </style>

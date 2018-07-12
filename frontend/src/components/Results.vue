@@ -1,5 +1,6 @@
 <template>
     <div class="table-container">
+        <router-link :to="{name: 'RepayForm'}" class="back">Back to form</router-link>
         <table>
             <thead>
             <tr>
@@ -22,7 +23,7 @@
                 </tr>
             </tbody>
         </table>
-        <router-link :to="{name: 'RepayForm'}">Back to form</router-link>
+
     </div>
 </template>
 
@@ -35,19 +36,31 @@
 
 <style scoped>
     .table-container{
-        margin-left: 10%;
+        background-color: rgba(60,156,235, 0.5);
+        padding: 2%;
+
     }
 
     table{
         border-collapse: collapse;
+        width: 100%;
     }
 
 
-    td, th {overflow:hidden;
-        white-space:nowrap;
+    td, th {
         border: 1px solid;
         padding: 1%;
-        }
 
+        }
+    .back{
+        position: absolute;
+        top: 15%;
+        margin-left: 30%;
+        text-decoration: none;
+        color: black;
+        background-color: rgba(225,2225,225,0.4);
+        padding: 0.75%;
+        border-radius: 4px;
+    }
 
 </style>
