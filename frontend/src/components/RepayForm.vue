@@ -1,6 +1,8 @@
 
 
 <template>
+
+    
     <button v-on:click="calcPay">Test form</button>
 </template>
 
@@ -13,7 +15,7 @@
                 let planData = {'loanAmount': '5000',
                     'nominalRate': '5.0',
                     'duration': '24',
-                    'startDate': '01-10-2018'}
+                    'startDate': new Date().toISOString()}
                 const body = JSON.stringify(planData);
                 fetch('http://localhost:8080/generate-plan',
                     {

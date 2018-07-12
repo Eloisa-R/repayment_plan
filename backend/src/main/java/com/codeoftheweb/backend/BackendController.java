@@ -55,7 +55,9 @@ public class BackendController {
             value = "/generate-plan",
             method = RequestMethod.POST)
     public ResponseEntity<List<Map<String,Object>>> getRepayPlan (@RequestBody Map<String,String> inputData) throws ParseException {
-        DateFormat format = new SimpleDateFormat("dd-MM-yyyy", Locale.ENGLISH);
+
+        DateFormat format = new SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss.SSS'Z'", Locale.US);
+
         Annuity newAnnuity = new Annuity(Double.parseDouble(inputData.get("loanAmount")),
                 Double.parseDouble(inputData.get("nominalRate")),Integer.parseInt(inputData.get("duration")),
                 format.parse(inputData.get("startDate")));

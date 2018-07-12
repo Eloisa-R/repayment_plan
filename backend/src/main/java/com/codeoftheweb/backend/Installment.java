@@ -25,6 +25,7 @@ public class Installment {
 
 
     public Installment(int index, double inputAnnuity, Date inputdate, double inpInitPrinc, double inputNominalIR) {
+        this.startDate = inputdate;
         this.index = index;
         this.annuity = inputAnnuity;
         this.loanAmount = inpInitPrinc;
@@ -33,6 +34,7 @@ public class Installment {
         setPrincipal();
         setAnnuity();
         setRemainPrinc();
+        setStartDate();
     }
 
     public Installment() {
