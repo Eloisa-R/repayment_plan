@@ -30,18 +30,18 @@ public class Installment {
         this.annuity = inputAnnuity;
         this.loanAmount = inpInitPrinc;
         this.nominalIR = inputNominalIR;
-        setInterest();
-        setPrincipal();
-        setAnnuity();
-        setRemainPrinc();
-        setStartDate();
+        calcInterest();
+        calcPrincipal();
+        calcAnnuity();
+        calcRemainPrinc();
+        calcStartDate();
     }
 
     public Installment() {
 
     }
 
-    public void setStartDate() {
+    public void calcStartDate() {
         Calendar myCal = Calendar.getInstance();
         myCal.setTime(this.startDate);
         myCal.add(Calendar.MONTH, + this.index);
@@ -49,21 +49,29 @@ public class Installment {
 
     }
 
-    public void setInterest(){
+    public void calcInterest(){
         this.interest = Math.round((((this.nominalIR * 30 * this.loanAmount) / 360) / 100) * 100.0) / 100.0;
     }
 
-    public void setPrincipal(){
+    public void calcPrincipal(){
         this.principal = this.annuity - this.interest > this.loanAmount? this.loanAmount: Math.round((this.annuity - this.interest) * 100.0) / 100.0;
     }
 
-    public void setAnnuity(){
+    public void calcAnnuity(){
         this.annuity = this.annuity - this.interest > this.loanAmount? Math.round((this.principal + this.interest) * 100.0) / 100.0: this.annuity;
     }
 
-    public void setRemainPrinc(){
+    public void calcRemainPrinc(){
         this.remainPrinc = Math.round((this.loanAmount - this.principal) * 100.0) / 100.0;
 
+    }
+
+    public void setPrincipal(double principal) {
+        this.principal = principal;
+    }
+
+    public void setLoanAmount(double loanAmount) {
+        this.loanAmount = loanAmount;
     }
 
     public double getRemainPrinc() {

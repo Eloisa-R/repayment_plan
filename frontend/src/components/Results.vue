@@ -14,12 +14,12 @@
             </thead>
             <tbody>
                 <tr v-for="item in postResult">
-                    <td>{{ item.date }}</td>
-                    <td>{{ item.borrowerPaymentAmount }}</td>
-                    <td>{{ item.principal }}</td>
-                    <td>{{ item.interest }}</td>
-                    <td>{{ item.initialOutstandingPrincipal }}</td>
-                    <td>{{ item.remainingOutstandingPrincipal }}</td>
+                    <td>{{ new Date(item.date).getDate()}}-{{ new Date(item.date).getMonth()+1}}-{{ new Date(item.date).getFullYear()}}</td>
+                    <td>{{ item.borrowerPaymentAmount }} €</td>
+                    <td>{{ item.principal }}  €</td>
+                    <td>{{ item.interest }} €</td>
+                    <td>{{ item.initialOutstandingPrincipal }}  €</td>
+                    <td>{{ item.remainingOutstandingPrincipal }}  €</td>
                 </tr>
             </tbody>
         </table>

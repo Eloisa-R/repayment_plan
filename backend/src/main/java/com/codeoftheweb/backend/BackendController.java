@@ -27,12 +27,20 @@ public class BackendController {
     public void createInstallments(Annuity newAnnuity) {
         double inputPrinc = newAnnuity.getLoanAmount();
         for (int i=0; i < newAnnuity.getDuration(); i++) {
-
             newAnnuity.addInstallment(new Installment(i,newAnnuity.getAnnuity(),newAnnuity.getStartDate(), inputPrinc,newAnnuity.getNominalIR()));
             List<Installment> allInst = newAnnuity.getRepaymentplan();
             Installment lastInstallment = allInst.get(allInst.size()-1);
             installmentRepository.save(lastInstallment);
             inputPrinc = lastInstallment.getRemainPrinc();
+        }
+        List<Installment> allInstallments = newAnnuity.getRepaymentplan();
+        Installment lastPay = allInstallments.get(allInstallments.size()-1);
+        double last = lastPay.getRemainPrinc();
+        if (last != 0) {
+            double correctAmount = lastPay.getLoanAmount();
+            lastPay.setPrincipal(correctAmount);
+            lastPay.calcAnnuity();
+            lastPay.calcRemainPrinc();
         }
     }
 

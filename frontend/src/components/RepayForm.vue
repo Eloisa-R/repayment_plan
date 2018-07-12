@@ -10,16 +10,16 @@
         </p>
 
         <p>
-            <label for="amount">Loan Amount</label>
-            <input type="number" name="amount" id="amount" v-model="amount">
+            <label for="amount">Loan Amount (€)</label>
+            <input type="number" name="amount" id="amount" placeholder="0" v-model="amount">
         </p>
         <p>
-            <label for="interest">Nominal Interest Rate (percentage)</label>
+            <label for="interest">Nominal Interest Rate (%)</label>
             <input type="number" name="interest" id="interest" step=".01" placeholder="0.00" v-model="interest">
         </p>
         <p>
             <label for="duration">Duration (in months)</label>
-            <input type="number" name="duration" id="duration" v-model="duration">
+            <input type="number" name="duration" id="duration" placeholder="0" v-model="duration">
         </p>
         <p>
             <label for="date">Start date of Repayment</label>
@@ -74,7 +74,7 @@
                  if (!this.date){
                      this.errors.push("Please provide a start date");
                  } else if (Date.parse(this.date) < new Date()) {
-                    this.errors.push("Date cannot be in the past")
+                    this.errors.push("Date cannot be today or in the past")
                  }
                 if(!this.errors.length) {
                     e.preventDefault();
