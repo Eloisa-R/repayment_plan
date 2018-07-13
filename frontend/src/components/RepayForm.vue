@@ -90,7 +90,7 @@
                     'duration': this.duration,
                     'startDate': new Date(this.date).toISOString()}
                 const body = JSON.stringify(planData);
-                fetch('http://localhost:8080/generate-plan',
+                fetch('/generate-plan',
                     {
                         method: 'POST',
                         body: body,

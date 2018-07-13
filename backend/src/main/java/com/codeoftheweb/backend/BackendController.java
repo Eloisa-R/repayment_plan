@@ -33,15 +33,7 @@ public class BackendController {
             installmentRepository.save(lastInstallment);
             inputPrinc = lastInstallment.getRemainPrinc();
         }
-        List<Installment> allInstallments = newAnnuity.getRepaymentplan();
-        Installment lastPay = allInstallments.get(allInstallments.size()-1);
-        double last = lastPay.getRemainPrinc();
-        if (last != 0) {
-            double correctAmount = lastPay.getLoanAmount();
-            lastPay.setPrincipal(correctAmount);
-            lastPay.calcAnnuity();
-            lastPay.calcRemainPrinc();
-        }
+
     }
 
     public List<Map<String,Object>> createInstList(Annuity newAnnuity){
