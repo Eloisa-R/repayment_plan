@@ -10,6 +10,7 @@ import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.*;
 
+//cross origin is used only in dev
 @CrossOrigin(origins = "http://localhost:8081", methods = {RequestMethod.GET, RequestMethod.POST, RequestMethod.OPTIONS})
 @RestController
 public class BackendController {
@@ -23,7 +24,8 @@ public class BackendController {
     public BackendController() {
     }
 
-
+    //create all installmenst for repayment, using the number of months
+    //to know how many are needed
     public void createInstallments(Annuity newAnnuity) {
         double inputPrinc = newAnnuity.getLoanAmount();
         for (int i=0; i < newAnnuity.getDuration(); i++) {
@@ -36,6 +38,7 @@ public class BackendController {
 
     }
 
+    //create list of maps with installment data to send back in the response
     public List<Map<String,Object>> createInstList(Annuity newAnnuity){
         List<Map<String,Object>> InstList = new ArrayList<>();
         for (Installment installment: newAnnuity.getRepaymentplan()) {
